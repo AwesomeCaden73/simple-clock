@@ -3,11 +3,18 @@
     <head>
         <title>Clock</title>
         <link rel="stylesheet" href='./styles/legacy.css' id="main">
+        <link rel="stylesheet" href="./styles/modal.css">
         <link rel="manifest" href="manifest.json" />
         <script src="./scripts/initiate.js"></script>
     </head>
 
     <body>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <p>We've noticed this is your first time here. To access settings (used to set class names and your schedule), click <a href="settings.html">here</a> or change "index" in the address bar above to "settings".</p>
+              <p>Click anywhere to dismiss this message.</p>
+            </div>
+          </div>
         <div class="middle column">
             <div class="offset">
                 <button class="time" id="time">
@@ -81,6 +88,22 @@
             if (typeof navigator.serviceWorker !== 'undefined') {
               navigator.serviceWorker.register('sw.js')
             }
-          </script>          
+          </script>
+          <script>
+            var modal = document.getElementById("myModal");
+            window.onclick = function(event) {
+                modal.style.display = "none";
+                localStorage.setItem('modal', 'true');
+            }
+
+            function showModal(){
+                modal.style.display = "block"
+            }
+
+            if (localStorage.getItem('modal') !== 'true') {
+                showModal()
+            }
+
+          </script>
     </body>
 </html>

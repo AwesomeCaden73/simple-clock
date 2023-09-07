@@ -22,6 +22,8 @@ if (localStorage.getItem('setup') === 'true') {
     localStorage.setItem('c6', 'Class 6')
 
     localStorage.setItem('setup', 'true')
+
+    localStorage.setItem('modal', 'false')
 }
 
 
