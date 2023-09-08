@@ -12,6 +12,7 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
               <p>We've noticed this is your first time here. To access settings (used to set class names and your schedule), click <a href="settings.html">here</a> or change "index" in the address bar above to "settings".</p>
+              <p>At the moment, class and schedule storage is not supported on the installable version of this page. We are actively working to solve this issue.</p>
               <p>Click anywhere to dismiss this message.</p>
             </div>
           </div>
@@ -100,7 +101,7 @@
                 modal.style.display = "block"
             }
 
-            if (localStorage.getItem('modal') !== 'true') {
+            if ((localStorage.getItem('modal') !== 'true') && (window.matchMedia('(display-mode: standalone)').matches === false)) {
                 showModal()
             }
 
