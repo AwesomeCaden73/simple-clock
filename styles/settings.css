@@ -6,7 +6,7 @@ html {
     background-color: black;
 }
 
-input {
+input, textarea{
     border-color: rgb(0, 200, 255);
     border-radius: 8px;
     border-width: 3px;
